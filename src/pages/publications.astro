@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import PublicationCard from "../components/PublicationCard.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Layout from "../layouts/Layout.astro";
+
+const publications = (await getCollection("publications")).sort((a, b) => a.data.order - b.data.order);
+
+const groups = [
+  { category: "Journal", title: "Journal papers" },
+  { category: "Accepted", title: "Accepted papers" },
+  { category: "Submitted", title: "Submitted papers" },
+  { category: "Conference", title: "Conference papers" },
+  { category: "Abstract", title: "Abstracts and refereed contributions" }
+] as const;
+---
+
+<Layout
+  title="Publications - Islam Osman"
+  description="Selected publications and grouped research output for Islam Osman."
+>
+  <div class="space-y-6">
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="Publications"
+        title="25 papers and 2 refereed abstracts"
+      />
+      <div class="grid gap-6 lg:grid-cols-2">
+        {publications.filter((item) => item.data.featured).map((publication) => (
+          <PublicationCard publication={publication} />
+        ))}
+      </div>
+    </section>
+
+    {groups.map((group) => {
+      const items = publications.filter((item) => item.data.category === group.category);
+      if (items.length === 0) return null;
+
+      return (
+        <section class="card-shell p-8 md:p-10">
+          <SectionHeader eyebrow={group.category} title={group.title} />
+          <div class="grid gap-4">
+            {items.map((publication) => <PublicationCard publication={publication} compact />)}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+</Layout>

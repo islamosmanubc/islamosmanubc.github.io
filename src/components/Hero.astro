@@ -1,0 +1,59 @@
+---
+import TagPill from "./TagPill.astro";
+import StatCard from "./StatCard.astro";
+import { focusAreas, profile, siteMeta, stats } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="card-shell overflow-hidden p-8 md:p-10">
+  <div class="relative grid gap-8 xl:grid-cols-[1.3fr_0.7fr]">
+    <div>
+      <p class="section-kicker">{profile.name}</p>
+      <p class="mt-3 text-sm font-medium uppercase tracking-[0.18em] text-slate-400">{profile.title}</p>
+      <h1 class="display-copy mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+        {profile.heroHeadline}
+      </h1>
+      <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+        {profile.intro}
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        {focusAreas.slice(0, 6).map((item) => <TagPill label={item} />)}
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={`${base}projects/`}
+          class="rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-white"
+        >
+          View Projects
+        </a>
+        <a
+          href={`${base}publications/`}
+          class="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300/40 hover:text-cyan-100"
+        >
+          View Publications
+        </a>
+        <a
+          href={`${base}${siteMeta.cvPath.replace(/^\//, "")}`}
+          class="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300/40 hover:text-cyan-100"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Download CV
+        </a>
+        <a
+          href={`${base}contact/`}
+          class="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300/40 hover:text-cyan-100"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
+      {stats.map((item) => <StatCard label={item.label} value={item.value} />)}
+    </div>
+  </div>
+</section>

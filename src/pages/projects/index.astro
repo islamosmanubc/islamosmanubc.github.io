@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import ProjectGrid from "../../components/ProjectGrid.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout
+  title="Projects - Islam Osman"
+  description="Portfolio projects for Islam Osman across autonomous driving, medical imaging, and computer vision research."
+>
+  <section class="card-shell p-8 md:p-10">
+    <SectionHeader
+      eyebrow="Projects"
+      title="Projects"
+    />
+    <ProjectGrid projects={projects} />
+  </section>
+</Layout>

@@ -1,0 +1,57 @@
+---
+import SectionHeader from "../components/SectionHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import { awards, education } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Education - Islam Osman"
+  description="Education, academic background, and honors for Islam Osman."
+>
+  <div class="space-y-6">
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="Education"
+        title="Academic background"
+        description="Formal training in computer science with a progression from scene understanding to continual and multimodal AI systems."
+      />
+      <div class="space-y-4">
+        {education.map((item) => (
+          <div class="panel-muted p-6">
+            <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div>
+                <h2 class="text-xl font-semibold text-white">{item.degree}</h2>
+                <p class="mt-1 text-sm text-cyan-200">{item.school}</p>
+                <p class="mt-1 text-sm text-slate-400">{item.location}</p>
+              </div>
+              <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300">{item.period}</span>
+            </div>
+            <p class="mt-4 text-sm leading-7 text-slate-300">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <div class="card-shell p-8">
+        <SectionHeader eyebrow="Honors" title="Awards and recognition" />
+        <ul class="space-y-3 text-sm leading-7 text-slate-300">
+          {awards.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div class="card-shell p-8">
+        <SectionHeader
+          eyebrow="Context"
+          title="Why the academic path matters here"
+          description="The value of the academic record is that it underpins a portfolio built around robust vision systems, experimental rigor, and real deployment constraints."
+        />
+        <a href={`${base}publications/`} class="text-sm font-medium text-cyan-200 hover:text-white">
+          View publications -&gt;
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  label: string;
+  value: string;
+  href: string;
+  description?: string;
+}
+
+const { label, value, href, description } = Astro.props;
+const isExternal = href.startsWith("http");
+---
+
+<a
+  href={href}
+  class="card-shell hover-lift block min-w-0 p-6"
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noreferrer noopener" : undefined}
+>
+  <div class="flex flex-col gap-4 md:grid md:grid-cols-[112px_minmax(0,1fr)] md:items-start">
+    <p class="whitespace-pre-line text-sm uppercase tracking-[0.14em] text-slate-400">{label}</p>
+    <div class="min-w-0">
+      <p class="text-lg font-semibold leading-8 text-white [overflow-wrap:anywhere]">
+        {value}
+      </p>
+      {description && (
+        <p class="mt-2 text-sm leading-7 text-slate-300 [overflow-wrap:anywhere]">{description}</p>
+      )}
+    </div>
+  </div>
+</a>

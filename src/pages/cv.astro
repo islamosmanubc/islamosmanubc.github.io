@@ -1,0 +1,94 @@
+---
+import SectionHeader from "../components/SectionHeader.astro";
+import SkillGroup from "../components/SkillGroup.astro";
+import Layout from "../layouts/Layout.astro";
+import { cvHighlights, profile, siteMeta, skillGroups } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+const cvUrl = `${base}${siteMeta.cvPath.replace(/^\//, "")}`;
+---
+
+<Layout
+  title="CV - Islam Osman"
+  description="CV page with highlights, skills, and PDF access for Islam Osman."
+>
+  <div class="space-y-6">
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="CV"
+        title="Resume"
+        description={profile.summary}
+      />
+
+      <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="panel-muted p-6">
+          <h2 class="text-lg font-semibold text-white">Career highlights</h2>
+          <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+            {cvHighlights.map((item) => <li>{item}</li>)}
+          </ul>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href={cvUrl}
+              class="rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-white"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open CV PDF
+            </a>
+            <a
+              href={cvUrl}
+              class="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300/40 hover:text-cyan-100"
+              download
+            >
+              Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {skillGroups.slice(0, 4).map((group) => <SkillGroup title={group.title} items={group.items} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="card-shell p-4 md:p-6">
+      <SectionHeader
+        eyebrow="Inline view"
+        title="Embedded PDF"
+        description="Some browsers and in-app webviews do not support inline PDF rendering. If that happens, use the open or download actions above."
+      />
+      <div class="overflow-hidden rounded-[1.25rem] border border-white/10">
+        <object
+          data={cvUrl}
+          type="application/pdf"
+          aria-label="Islam Osman CV PDF"
+          class="h-[900px] w-full bg-slate-950"
+        >
+          <div class="flex min-h-[360px] flex-col items-center justify-center gap-4 px-6 py-10 text-center">
+            <p class="max-w-xl text-sm leading-7 text-slate-300">
+              Inline PDF preview is not available in this browser or webview. Open the file in a new tab or download it directly.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <a
+                href={cvUrl}
+                class="rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open CV PDF
+              </a>
+              <a
+                href={cvUrl}
+                class="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300/40 hover:text-cyan-100"
+                download
+              >
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </object>
+      </div>
+    </section>
+  </div>
+</Layout>

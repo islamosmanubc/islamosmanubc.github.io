@@ -1,0 +1,103 @@
+---
+import { getCollection, render } from "astro:content";
+import Prose from "../../components/Prose.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import TagPill from "../../components/TagPill.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const base = import.meta.env.BASE_URL;
+const cover = `${base}${project.data.cover.replace(/^\//, "")}`;
+---
+
+<Layout
+  title={`${project.data.title} - Islam Osman`}
+  description={project.data.summary}
+  image={project.data.cover}
+>
+  <div class="space-y-6">
+    <section class="card-shell overflow-hidden">
+      <img
+        src={cover}
+        alt={`${project.data.title} cover image`}
+        class="block h-72 w-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+      />
+
+      <div class="p-8 md:p-10">
+        <p class="section-kicker">{project.data.period}</p>
+        <h1 class="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+          {project.data.title}
+        </h1>
+        <p class="mt-4 max-w-3xl text-lg leading-8 text-slate-300">{project.data.subtitle}</p>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          {project.data.tags.map((tag) => <TagPill label={tag} />)}
+        </div>
+
+        <div class="mt-8 grid gap-4 lg:grid-cols-[1fr_340px]">
+          <div class="panel-muted p-6">
+            <SectionHeader eyebrow="Overview" title="Project summary" />
+            <p class="text-sm leading-8 text-slate-300">{project.data.summary}</p>
+            <p class="mt-4 text-sm leading-8 text-slate-300">{project.data.impact}</p>
+          </div>
+
+          <div class="panel-muted p-6">
+            <h2 class="text-lg font-semibold text-white">Project facts</h2>
+            <ul class="mt-4 space-y-3 text-sm text-slate-300">
+              <li><span class="text-slate-400">Year:</span> {project.data.year}</li>
+              <li><span class="text-slate-400">Period:</span> {project.data.period}</li>
+            </ul>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              {project.data.stack.map((item) => (
+                <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300">{item}</span>
+              ))}
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-4 text-sm">
+              {project.data.github && (
+                <a href={project.data.github} class="text-cyan-200 hover:text-white" target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+              )}
+              {project.data.demo && (
+                <a href={project.data.demo} class="text-cyan-200 hover:text-white" target="_blank" rel="noreferrer">
+                  Demo
+                </a>
+              )}
+              {project.data.paper && (
+                <a href={project.data.paper} class="text-cyan-200 hover:text-white" target="_blank" rel="noreferrer">
+                  Related paper
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader eyebrow="Case study" title="Problem, role, approach, tools, and outcomes" />
+      <Prose>
+        <Content />
+      </Prose>
+    </section>
+
+    <div>
+      <a href={`${base}projects/`} class="text-sm font-medium text-cyan-200 hover:text-white">
+        &lt;- Back to all projects
+      </a>
+    </div>
+  </div>
+</Layout>

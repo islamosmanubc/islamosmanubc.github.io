@@ -1,0 +1,72 @@
+---
+import SectionHeader from "../components/SectionHeader.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+import Layout from "../layouts/Layout.astro";
+import { awards, experience, service, teaching } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Experience - Islam Osman"
+  description="Professional experience, teaching, and service for Islam Osman."
+>
+  <div class="space-y-6">
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="Experience"
+        title="Professional timeline"
+        description="Roles spanning academic research, applied AI systems, and industry collaboration."
+      />
+      <div class="space-y-6">
+        {experience.map((item) => (
+          <TimelineItem
+            title={item.role}
+            subtitle={item.organization}
+            location={item.location}
+            period={item.period}
+            bullets={item.bullets}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="Teaching"
+        title="Teaching and academic activity"
+        description="Instruction, lab support, and mentorship have been an important parallel track to the research and product work."
+      />
+      <div class="space-y-6">
+        {teaching.map((item) => (
+          <TimelineItem
+            title={item.role}
+            subtitle={item.organization}
+            location={item.location}
+            period={item.period}
+            bullets={item.bullets}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="card-shell p-8">
+        <SectionHeader eyebrow="Recognition" title="Awards and honors" />
+        <ul class="space-y-3 text-sm leading-7 text-slate-300">
+          {awards.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div class="card-shell p-8">
+        <SectionHeader eyebrow="Service" title="Editorial activity and chair roles" />
+        <ul class="space-y-3 text-sm leading-7 text-slate-300">
+          {service.map((item) => <li>{item}</li>)}
+        </ul>
+        <a href={`${base}education/`} class="mt-6 inline-flex text-sm font-medium text-cyan-200 hover:text-white">
+          View education details -&gt;
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

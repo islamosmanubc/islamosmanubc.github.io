@@ -1,0 +1,67 @@
+---
+import ContactCard from "../components/ContactCard.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import { contacts, profile, siteMeta } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Contact - Islam Osman"
+  description="Contact links and CV access for Islam Osman."
+>
+  <div class="space-y-6">
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="Contact"
+        title="Get in touch"
+        description="Use email for collaboration, research, and hiring conversations. GitHub and Google Scholar provide direct access to public work and publications."
+      />
+
+      <div class="grid gap-4">
+        {contacts.map((item) => (
+          <ContactCard
+            label={item.label}
+            value={item.value}
+            href={item.href}
+            description={item.description}
+          />
+        ))}
+      </div>
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+        <div class="panel-muted p-6">
+          <h3 class="text-lg font-semibold text-white">CV and portfolio links</h3>
+          <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+            Use the CV page when you want the resume view, or go straight to projects and publications if you want the portfolio-first version.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a
+              href={`${base}cv/`}
+              class="rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-white"
+            >
+              View CV page
+            </a>
+            <a
+              href={`${base}${siteMeta.cvPath.replace(/^\//, "")}`}
+              class="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300/40 hover:text-cyan-100"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="panel-muted p-6">
+          <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Public profile summary</p>
+          <p class="mt-3 text-base leading-8 text-slate-300">{profile.summary}</p>
+          <p class="mt-4 text-sm leading-7 text-slate-400">
+            For a portfolio-first view, explore projects first, then use GitHub and Google Scholar for supporting technical depth.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

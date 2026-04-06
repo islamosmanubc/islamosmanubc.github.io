@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import SidebarProfile from "../components/SidebarProfile.astro";
+import { profile, siteMeta } from "../data/site";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = siteMeta.description,
+  image = siteMeta.ogImage
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, "")}`;
+const canonical = Astro.url.href;
+const ogImage = Astro.site ? new URL(withBase(image), Astro.site).toString() : undefined;
+const homeUrl = Astro.site ? new URL(base, Astro.site).toString() : canonical;
+const sitemapUrl = Astro.site ? new URL(withBase("sitemap-index.xml"), Astro.site).toString() : undefined;
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.title,
+  email: profile.email,
+  url: homeUrl,
+  sameAs: [profile.github, profile.scholar],
+  homeLocation: {
+    "@type": "Place",
+    name: profile.location
+  }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#08111f" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={withBase("favicon.svg")} />
+    {sitemapUrl && <link rel="sitemap" href={sitemapUrl} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteMeta.siteName} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <title>{title}</title>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="mx-auto max-w-7xl px-4 py-6 md:px-6 xl:px-8">
+      <div class="xl:grid xl:grid-cols-[320px_minmax(0,1fr)] xl:gap-6">
+        <div class="hidden xl:block">
+          <SidebarProfile />
+        </div>
+
+        <main id="main-content">
+          <div class="mb-6 xl:hidden">
+            <SidebarProfile />
+          </div>
+          <Navbar />
+          <slot />
+          <Footer />
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

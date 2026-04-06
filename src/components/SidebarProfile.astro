@@ -1,0 +1,60 @@
+---
+import { focusAreas, profile, siteMeta } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<aside class="card-shell sticky top-6 p-6">
+  <div class="flex items-center gap-4">
+    <img
+      src={`${base}${siteMeta.avatarPath.replace(/^\//, "")}`}
+      alt="Portrait of Islam Osman"
+      class="h-[72px] w-[72px] rounded-2xl border border-white/10"
+      width="72"
+      height="72"
+    />
+    <div>
+      <h2 class="text-xl font-semibold text-white">{profile.name}</h2>
+      <p class="mt-1 text-sm text-slate-400">{profile.title}</p>
+    </div>
+  </div>
+
+  <div class="soft-divider my-6"></div>
+
+  <div class="space-y-4 text-sm text-slate-300">
+    <p>{profile.location}</p>
+    <a href={`mailto:${profile.email}`} class="block hover:text-cyan-100">{profile.email}</a>
+    <a href={profile.github} target="_blank" rel="noreferrer" class="block hover:text-cyan-100">
+      GitHub
+    </a>
+    <a href={profile.scholar} target="_blank" rel="noreferrer" class="block hover:text-cyan-100">
+      {profile.scholarLabel}
+    </a>
+  </div>
+
+  <div class="soft-divider my-6"></div>
+
+  <div>
+    <p class="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-slate-400">Focus</p>
+    <div class="flex flex-wrap gap-2">
+      {focusAreas.slice(0, 8).map((item) => (
+        <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300">{item}</span>
+      ))}
+    </div>
+  </div>
+
+  <div class="mt-6 flex flex-wrap gap-3">
+    <a
+      href={`${base}contact/`}
+      class="inline-flex rounded-full bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-white"
+    >
+      Contact
+    </a>
+    <a
+      href={`${base}cv/`}
+      class="inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white hover:border-cyan-300/40 hover:text-cyan-100"
+    >
+      CV
+    </a>
+  </div>
+</aside>

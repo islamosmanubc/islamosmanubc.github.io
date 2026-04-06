@@ -1,0 +1,35 @@
+---
+import { navLinks } from "../data/site";
+
+const currentPath = Astro.url.pathname.replace(import.meta.env.BASE_URL, "/");
+const base = import.meta.env.BASE_URL;
+---
+
+<nav aria-label="Primary" class="card-shell sticky top-4 z-20 mb-6 overflow-x-auto px-5 py-4">
+  <ul class="flex min-w-max items-center gap-2">
+    {navLinks.map((link) => {
+      const href = `${base}${link.href}`;
+      const normalized = `/${link.href}`.replace(/\/+/g, "/");
+      const active =
+        normalized === "/"
+          ? currentPath === "/"
+          : currentPath.startsWith(normalized);
+
+      return (
+        <li>
+          <a
+            href={href}
+            aria-current={active ? "page" : undefined}
+            class={`inline-flex rounded-full px-4 py-2 text-sm font-medium transition ${
+              active
+                ? "bg-cyan-300 text-slate-950"
+                : "text-slate-300 hover:bg-white/5 hover:text-white"
+            }`}
+          >
+            {link.label}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>
