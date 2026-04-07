@@ -1,0 +1,99 @@
+---
+import SectionHeader from "../components/SectionHeader.astro";
+import SchoolProjectCard from "../components/SchoolProjectCard.astro";
+import Layout from "../layouts/Layout.astro";
+import schoolProjectsData from "../data/school-projects.json";
+
+interface SchoolProject {
+  slug: string;
+  display_name: string;
+  project_type: string;
+  summary: string;
+  blog_paragraphs: string[];
+  stack: {
+    languages: string[];
+    tools: string[];
+    libraries: string[];
+    concepts: string[];
+  };
+}
+
+const excludedSlugs = new Set([
+  "graph-simulation-code",
+  "kidzania",
+  "pattern-project-1",
+  "theory-of-computation"
+]);
+
+const thumbnailMap: Record<string, string> = {
+  compiler: "/images/school-projects/compiler.jpg",
+  "connect-4": "/images/school-projects/connect-4.jpg",
+  "digits-hand-written-recognition": "/images/school-projects/digits-hand-written-recognition.png",
+  game: "/images/school-projects/game.png",
+  "graph-simulation": "/images/school-projects/graph-simulation.png",
+  "scene-narrating-system": "/images/school-projects/scene-narrating-system.png",
+  "security-project": "/images/school-projects/security-project.jpg",
+  "student-course-management-system-code": "/images/school-projects/student-course-management-system.png",
+  "survival-darius": "/images/school-projects/survival-darius.png",
+  "turing-machine-simulator": "/images/school-projects/turing-machine-simulator.png",
+  xocode: "/images/school-projects/xocode.jpg"
+};
+
+const mergeUnique = (items: string[]) => [...new Set(items)];
+const allProjects = schoolProjectsData.projects as SchoolProject[];
+const patternProject = allProjects.find((project) => project.slug === "pattern-project-1");
+
+const projects = [...allProjects]
+  .filter((project) => !excludedSlugs.has(project.slug))
+  .map((project) => {
+    const renamedDisplayName =
+      project.slug === "digits-hand-written-recognition"
+        ? "Hand Written Digits Recognition"
+        : project.slug === "game"
+          ? "The invaders"
+          : project.display_name;
+
+    const mergedStack =
+      project.slug === "digits-hand-written-recognition" && patternProject
+        ? {
+            languages: mergeUnique([...project.stack.languages, ...patternProject.stack.languages]),
+            tools: mergeUnique([...project.stack.tools, ...patternProject.stack.tools]),
+            libraries: mergeUnique([...project.stack.libraries, ...patternProject.stack.libraries]),
+            concepts: mergeUnique([...project.stack.concepts, ...patternProject.stack.concepts])
+          }
+        : project.stack;
+
+    return {
+      ...project,
+      display_name: renamedDisplayName,
+      stack: mergedStack,
+      thumbnail: thumbnailMap[project.slug]
+    };
+  })
+  .sort((a, b) => a.display_name.localeCompare(b.display_name));
+---
+
+<Layout
+  title="School Projects - Islam Osman"
+  description="Archived undergraduate and MSc-era school projects spanning compilers, computer vision, games, simulation, and desktop software."
+>
+  <div class="space-y-6">
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="School projects"
+        title="School projects"
+      />
+    </section>
+
+    <section class="card-shell p-8 md:p-10">
+      <SectionHeader
+        eyebrow="Project archive"
+        title="Project archive"
+      />
+
+      <div class="grid gap-6 xl:grid-cols-2">
+        {projects.map((project) => <SchoolProjectCard project={project} />)}
+      </div>
+    </section>
+  </div>
+</Layout>

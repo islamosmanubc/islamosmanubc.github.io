@@ -1,8 +1,9 @@
 ---
-title: "Credit Risk Rating Project at Scotiabank"
+title: "Credit Risk Rating Project"
 slug: "credit-risk-rating-project"
 year: 2022
 period: "2022"
+organization: "Scotiabank"
 subtitle: "Sparse-data reconstruction and internal-grade prediction for banking credit workflows."
 summary: "A deep learning pipeline that reconstructs missing credit-risk information and predicts suggestive internal grades for General Industries and Regional Portfolio review."
 featured: false

@@ -1,0 +1,883 @@
+{
+  "generated_at": "2026-04-06",
+  "workspace": "D:\\0 phd\\undergrade_masters",
+  "projects": [
+    {
+      "folder_name": "Compiler",
+      "slug": "compiler",
+      "display_name": "Compiler",
+      "project_type": "educational desktop app",
+      "verification_level": "inferred_from_packaged_artifacts_and_sample_input",
+      "confidence": "medium",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "Compiler.exe",
+        "test.txt sample program with assignment, if/then/end, repeat/until, write, and endl",
+        "assembly strings including CheckToken, NextToken, PrintParseTree, statement, and TokenType"
+      ],
+      "notes": "Only the packaged executable and a sample input file are present, so the description is based on observable language features and assembly symbols rather than source code.",
+      "summary": "A teaching-oriented compiler front end for a small imperative language, focused on token checking, parsing, and parse-tree style analysis.",
+      "blog_title": "Compiler for a Tiny Teaching Language",
+      "blog_paragraphs": [
+        "This folder preserves a Windows desktop compiler project built around a very small teaching language. The sample input file shows a compact syntax for assignment, conditional branches, looping, and output, which makes the project feel like a classroom compiler used to explain how a language is read and validated step by step.",
+        "Even without the source, the executable metadata exposes useful clues: symbols such as CheckToken, NextToken, TokenType, and PrintParseTree suggest that the app walks through lexical analysis and syntax analysis rather than trying to be a production compiler. That makes it a strong portfolio piece for compiler construction fundamentals, especially if the website positions it as an educational parser and tokenization project."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework"
+        ],
+        "libraries": [
+          "System.Windows.Forms",
+          "System.Drawing"
+        ],
+        "concepts": [
+          "compiler construction",
+          "lexical analysis",
+          "syntax analysis",
+          "parse tree",
+          "toy language design"
+        ]
+      },
+      "keywords": [
+        "compiler",
+        "parser",
+        "lexer",
+        "tokenization",
+        "parse tree",
+        "C#",
+        "Windows Forms",
+        ".NET",
+        "educational language",
+        "syntax checker"
+      ],
+      "thumbnail_prompt": "Create a clean educational compiler thumbnail: a retro desktop coding window showing a tiny custom language with statements like assignment, if, repeat, and write; floating token cards, a branching parse tree, and subtle green terminal accents on a dark slate background. Make it feel academic, technical, and approachable."
+    },
+    {
+      "folder_name": "Connect 4",
+      "slug": "connect-4",
+      "display_name": "Connect 4",
+      "project_type": "3D board game",
+      "verification_level": "inferred_from_packaged_artifacts",
+      "confidence": "medium",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "Connect4.exe",
+        "XUI.dll",
+        "XNA assembly strings including Microsoft.Xna.Framework, Connect4Board, cubeVertices, and sceneRenderTarget",
+        "content folders for models, textures, music, bloom, fog, skybox, and UI shaders"
+      ],
+      "notes": "No source code is present in this folder. The description is based on the packaged game build, its assets, and its XNA metadata.",
+      "summary": "A polished 3D Connect Four implementation built with XNA, with custom UI, music, and post-processing effects.",
+      "blog_title": "3D Connect 4 with XNA Effects",
+      "blog_paragraphs": [
+        "This folder contains a packaged version of Connect 4 that goes well beyond a flat classroom board game. The asset structure points to a fully rendered 3D scene with board and coin models, red and yellow win states, menu UI, music, and several visual effects such as bloom, fog, and skybox rendering.",
+        "What makes the project interesting is the presentation layer. The XNA and shader-related assets suggest that the focus was not only game rules but also camera work, scene rendering, and player feedback. It reads like a student game project that tried to make a familiar game feel cinematic and game-engine driven rather than purely algorithmic."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Microsoft XNA Framework",
+          "Visual Studio",
+          "Windows desktop"
+        ],
+        "libraries": [
+          "Microsoft.Xna.Framework",
+          "XUI"
+        ],
+        "concepts": [
+          "3D rendering",
+          "board game logic",
+          "shader effects",
+          "audio feedback",
+          "menu UI"
+        ]
+      },
+      "keywords": [
+        "Connect 4",
+        "C#",
+        "XNA",
+        "3D game",
+        "board game",
+        "shader effects",
+        "bloom",
+        "fog",
+        "XUI",
+        "Windows game"
+      ],
+      "thumbnail_prompt": "Design a dramatic 3D Connect Four thumbnail with a glossy board floating in a lit game scene, red and yellow coins dropping into columns, a strong winner highlight, and subtle bloom and fog effects. Make it feel like an arcade-quality desktop game rather than a simple flat puzzle."
+    },
+    {
+      "folder_name": "digits hand written recognition",
+      "slug": "digits-hand-written-recognition",
+      "display_name": "Digits Hand Written Recognition",
+      "project_type": "pattern recognition desktop app build",
+      "verification_level": "packaged_build_of_source_project",
+      "confidence": "high",
+      "relationship": "Packaged build variant of Pattern Project (1). The executable name and training artifacts match that source project.",
+      "related_folders": [
+        "Pattern Project (1)"
+      ],
+      "evidence": [
+        "Pattern Project.exe inside the build folder",
+        "MNIST-style train and test files",
+        "TrainningDataKNN.txt",
+        "matching executable symbols with Pattern Project (1)"
+      ],
+      "notes": "This folder looks like the runnable distribution of the handwritten digit recognizer whose source lives in Pattern Project (1).",
+      "summary": "A runnable Windows build of a handwritten digit recognition app trained on MNIST-style data and designed for interactive classification.",
+      "blog_title": "Handwritten Digit Recognition App Build",
+      "blog_paragraphs": [
+        "This folder packages the deployable version of a handwritten digit recognition project aimed at interactive use. The bundled training data, test data, and executable naming line up with a desktop app that can classify digits from a prepared dataset and from user-provided drawings.",
+        "As a website entry, this version is useful because it represents the user-facing side of the project rather than the development workspace. It captures the idea of shipping an educational machine learning demo as a Windows application: a compact recognizer, a simple interface, and a direct bridge between theory, dataset preparation, and immediate visual feedback."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework 4.0"
+        ],
+        "libraries": [
+          "System.Windows.Forms",
+          "System.Drawing"
+        ],
+        "concepts": [
+          "handwritten digit recognition",
+          "MNIST",
+          "image preprocessing",
+          "distance-based classification",
+          "interactive inference"
+        ]
+      },
+      "keywords": [
+        "digit recognition",
+        "handwritten digits",
+        "MNIST",
+        "C#",
+        "Windows Forms",
+        "pattern recognition",
+        "image preprocessing",
+        "classification",
+        "desktop app",
+        "machine learning demo"
+      ],
+      "thumbnail_prompt": "Create a thumbnail for a handwritten digit recognition desktop app: a white drawing canvas with a bold black digit, a prediction panel showing numbers 0-9, and a subtle machine-learning vibe with grid cells and accuracy overlays. Make it feel like a practical student AI project."
+    },
+    {
+      "folder_name": "Game",
+      "slug": "game",
+      "display_name": "Game",
+      "project_type": "action game prototype",
+      "verification_level": "inferred_from_partial_source_and_screenshots",
+      "confidence": "medium",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "C++ sound engine files using DirectSound and PlaySound",
+        "DirectX libraries dsound.lib and dxguid.lib",
+        "screenshots showing third-person combat, minimap, loot, level progression, and a skill tree"
+      ],
+      "notes": "Only the audio subsystem source survives in this folder. The gameplay description is inferred from screenshots and the remaining sound code.",
+      "summary": "A third-person dungeon shooter and action-RPG prototype with combat, loot, levels, a minimap, and an upgrade tree, backed by a custom Windows audio layer.",
+      "blog_title": "Dungeon Shooter Prototype with RPG Progression",
+      "blog_paragraphs": [
+        "This folder captures a game prototype that mixes shooter combat with light RPG progression. The screenshots show a player character navigating enclosed combat arenas, fighting enemies, collecting pickups, using a minimap, and opening a level-up screen that allocates points into movement, health, mana, attack, and multiple skills.",
+        "The surviving source focuses on sound playback, but it still tells an important story about the project. The code uses DirectSound, winmm playback, and custom event hooks for background music, hit reactions, and death sounds. Even as a partial archive, the folder presents a clear student game prototype with systems thinking behind it: combat feedback, progression loops, and presentation polish."
+      ],
+      "stack": {
+        "languages": [
+          "C++"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows API",
+          "DirectX SDK"
+        ],
+        "libraries": [
+          "DirectSound",
+          "winmm",
+          "dsound.lib",
+          "dxguid.lib"
+        ],
+        "concepts": [
+          "third-person combat",
+          "action RPG progression",
+          "skill tree",
+          "HUD and minimap",
+          "game audio engine"
+        ]
+      },
+      "keywords": [
+        "C++",
+        "DirectSound",
+        "DirectX",
+        "action RPG",
+        "third-person shooter",
+        "skill tree",
+        "minimap",
+        "level up",
+        "Windows game",
+        "sound engine"
+      ],
+      "thumbnail_prompt": "Generate a gritty action-game thumbnail showing a third-person hero in a dungeon arena, enemies approaching, a glowing crosshair, scattered loot, and a vertical RPG HUD with a minimap and skill icons. Use warm firelight and dark stone textures to make it feel like a student-built fantasy shooter."
+    },
+    {
+      "folder_name": "Graph Simulation",
+      "slug": "graph-simulation",
+      "display_name": "Graph Simulation",
+      "project_type": "graph algorithm visualizer build",
+      "verification_level": "packaged_build_of_source_project",
+      "confidence": "high",
+      "relationship": "Packaged build variant of Graph Simulation Code.",
+      "related_folders": [
+        "Graph Simulation Code"
+      ],
+      "evidence": [
+        "Graph Simulation.exe",
+        "graph templates for BFS, DFS, and DJK in .cercaria files",
+        "matching assembly names and symbols with Graph Simulation Code"
+      ],
+      "notes": "This folder is the ready-to-run build of the graph algorithm visualizer whose source exists in Graph Simulation Code.",
+      "summary": "A Windows build of an interactive graph algorithm teaching tool for drawing graphs and replaying BFS, DFS, and Dijkstra step by step.",
+      "blog_title": "Graph Algorithm Visualizer Build",
+      "blog_paragraphs": [
+        "This folder holds the distributable version of a graph algorithm visualizer designed for classroom-style explanation. The packaged templates for BFS, DFS, and Dijkstra make it easy to see that the goal was not only to compute a result, but to walk a learner through the sequence of states that each algorithm produces on a graph.",
+        "As a website entry, this build is interesting because it represents the final user experience. Someone can open the app, load a prepared graph, and immediately start exploring traversal and shortest-path behavior without needing the source project. It is the kind of educational software that turns abstract algorithm lectures into something concrete and visual."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework 4.0"
+        ],
+        "libraries": [
+          "System.Windows.Forms",
+          "System.Drawing"
+        ],
+        "concepts": [
+          "graph editor",
+          "BFS",
+          "DFS",
+          "Dijkstra",
+          "step-by-step teaching"
+        ]
+      },
+      "keywords": [
+        "graph simulation",
+        "BFS",
+        "DFS",
+        "Dijkstra",
+        "C#",
+        "Windows Forms",
+        "algorithm visualizer",
+        "graph editor",
+        "educational software",
+        "desktop app"
+      ],
+      "thumbnail_prompt": "Make a bright educational thumbnail for a graph algorithm simulator: a node-edge graph on a desktop UI, colored nodes changing from white to gray to black, a shortest-path line glowing, and small labels for BFS, DFS, and Dijkstra. Keep it crisp, visual, and classroom friendly."
+    },
+    {
+      "folder_name": "Graph Simulation Code",
+      "slug": "graph-simulation-code",
+      "display_name": "Graph Simulation Code",
+      "project_type": "graph algorithm visualizer source project",
+      "verification_level": "verified_from_source",
+      "confidence": "high",
+      "relationship": "Source project for the packaged Graph Simulation folder.",
+      "related_folders": [
+        "Graph Simulation"
+      ],
+      "evidence": [
+        "C# WinForms source code",
+        "algorithm classes for BFS, DFS, and Dijkstra",
+        "custom save and load support for .cercaria graph files",
+        "observer and state style architecture in graph, controller, and UI classes"
+      ],
+      "notes": "This is the most complete graph project in the workspace and is the best source for any website write-up about the graph simulator.",
+      "summary": "A full C# WinForms project for drawing graphs, running core graph algorithms, and replaying every step in a teaching-oriented interface.",
+      "blog_title": "Graph Algorithm Visualizer and Teaching Tool",
+      "blog_paragraphs": [
+        "Graph Simulation Code is a strong example of educational software built around algorithms instead of abstract theory alone. The application lets the user create nodes and edges, switch between directed and undirected graphs, edit properties, save and load graph templates, and then run BFS, DFS, or Dijkstra from inside a custom desktop UI.",
+        "What gives the project real depth is the way it models algorithm execution as reversible steps. Each traversal or shortest-path routine records state changes, queue operations, distances, predecessors, and pseudocode line jumps so the user can move forward and backward through the run. Combined with the graph editor, this turns the project into a practical teaching environment instead of a one-shot algorithm demo."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework 4.0"
+        ],
+        "libraries": [
+          "System.Windows.Forms",
+          "System.Drawing"
+        ],
+        "concepts": [
+          "BFS",
+          "DFS",
+          "Dijkstra",
+          "observer pattern",
+          "state pattern",
+          "graph serialization",
+          "step replay"
+        ]
+      },
+      "keywords": [
+        "C#",
+        "WinForms",
+        ".NET 4.0",
+        "graph algorithms",
+        "BFS",
+        "DFS",
+        "Dijkstra",
+        "algorithm visualization",
+        "observer pattern",
+        "state pattern"
+      ],
+      "thumbnail_prompt": "Create a modern algorithm-visualization thumbnail showing a graph editor window with draggable nodes, highlighted pseudocode on the side, a queue panel, and colored traversal states for BFS, DFS, and Dijkstra. Emphasize teaching, motion, and clarity."
+    },
+    {
+      "folder_name": "kidzania",
+      "slug": "kidzania",
+      "display_name": "Kidzania",
+      "project_type": "3D edutainment game build",
+      "verification_level": "inferred_from_packaged_artifacts",
+      "confidence": "medium",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "KidZania installer and nested game build",
+        "XNA-style content pipeline assets",
+        "SkinnedModel.dll and XUI.dll",
+        "asset names including Boy, Girl, Restaurant, Order, Client1, fast-food plate, Kidoz, and Map"
+      ],
+      "notes": "This folder contains an installer plus a packaged game. No source code is present, so the description is inferred from build structure, executable metadata, and asset names.",
+      "summary": "A KidZania-themed 3D edutainment prototype centered on avatar selection, map-driven interaction, and restaurant-style gameplay.",
+      "blog_title": "KidZania Restaurant Adventure Prototype",
+      "blog_paragraphs": [
+        "This folder looks like a packaged student game inspired by the KidZania brand and built as a playful 3D experience for younger audiences. The included installer, avatar textures, map assets, and skinned-model support all point to a complete desktop game flow rather than a rough technical prototype.",
+        "The content names suggest a restaurant or service-job scenario: boys and girls as selectable characters, clients, orders, plates, and a restaurant scene. That gives the project an edutainment feel, where the game is not only about movement in a 3D space but also about role play, task completion, and simple interactions that fit the KidZania theme."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Microsoft XNA Framework",
+          "Visual Studio",
+          "Windows installer packaging"
+        ],
+        "libraries": [
+          "Microsoft.Xna.Framework",
+          "XUI",
+          "SkinnedModel"
+        ],
+        "concepts": [
+          "edutainment",
+          "3D character selection",
+          "restaurant simulation",
+          "map navigation",
+          "interactive tasks"
+        ]
+      },
+      "keywords": [
+        "KidZania",
+        "C#",
+        "XNA",
+        "edutainment",
+        "3D game",
+        "restaurant simulation",
+        "avatar selection",
+        "skinned models",
+        "XUI",
+        "Windows game"
+      ],
+      "thumbnail_prompt": "Design a colorful KidZania-style thumbnail with a cheerful 3D restaurant scene, a boy and girl avatar, floating order icons, bright signage, and a playful city-map vibe. Keep it family friendly, energetic, and clearly game-like."
+    },
+    {
+      "folder_name": "Pattern Project (1)",
+      "slug": "pattern-project-1",
+      "display_name": "Pattern Project",
+      "project_type": "pattern recognition desktop app",
+      "verification_level": "verified_from_source",
+      "confidence": "high",
+      "relationship": "Source project for the packaged digits hand written recognition folder.",
+      "related_folders": [
+        "digits hand written recognition"
+      ],
+      "evidence": [
+        "C# WinForms source code",
+        "MNIST train and test files",
+        "classification, training, confusion matrix, and drawing UI code",
+        "image resize and binary threshold preprocessing"
+      ],
+      "notes": "The method names say KNN, but the implementation behaves more like a nearest-centroid classifier built from digit class averages and binary thresholding.",
+      "summary": "A C# desktop app for handwritten digit recognition that trains on MNIST-style data, visualizes digit templates, and lets users draw or load images for classification.",
+      "blog_title": "Pattern Project: Recognizing Handwritten Digits",
+      "blog_paragraphs": [
+        "Pattern Project is an educational machine learning application built around handwritten digit recognition. It reads MNIST-style training and test files, computes class representatives, visualizes digit patterns, and provides a simple interface for exploring both the training output and the final predictions.",
+        "The most engaging part of the project is the interaction loop. A user can draw a digit directly on the canvas or open an image file, the app resizes it to the expected 28 by 28 format, converts it into a binary representation, and then runs a distance-based classification step. The project also reports overall accuracy and confusion matrix data, which gives it a strong data-science and evaluation angle rather than making it a pure demo."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework 4.0"
+        ],
+        "libraries": [
+          "System.Windows.Forms",
+          "System.Drawing"
+        ],
+        "concepts": [
+          "MNIST",
+          "pattern recognition",
+          "nearest centroid classification",
+          "image preprocessing",
+          "confusion matrix",
+          "accuracy evaluation"
+        ]
+      },
+      "keywords": [
+        "handwritten digit recognition",
+        "MNIST",
+        "C#",
+        "WinForms",
+        "pattern recognition",
+        "image preprocessing",
+        "classification",
+        "confusion matrix",
+        "nearest centroid",
+        "machine learning"
+      ],
+      "thumbnail_prompt": "Create an AI-themed thumbnail for a handwritten digit recognizer: a central hand-drawn digit on a white canvas, side panels with 0-9 templates, a confusion matrix heatmap, and subtle grid overlays suggesting MNIST preprocessing. Keep it clean, academic, and visual."
+    },
+    {
+      "folder_name": "Scene Narrating System",
+      "slug": "scene-narrating-system",
+      "display_name": "Scene Narrating System",
+      "project_type": "computer vision desktop app",
+      "verification_level": "inferred_from_packaged_artifacts_and_training_data",
+      "confidence": "medium",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "Final Graduation Project.exe",
+        "Emgu CV, OpenCV, GPU, OCR, and OpenTK libraries",
+        "training data with repeated Human and Car labels",
+        "assembly strings including CameraCapture, ProcessImage, FaceSegmentation, ClassifyObjects, ConvertGroundToGraph, and MovingObject"
+      ],
+      "notes": "This looks more like a rule-based or trained scene-understanding pipeline than a modern end-to-end captioning model. The provided training data suggests a compact object vocabulary rather than open-domain narration.",
+      "summary": "A graduation project focused on scene understanding: capture an image, segment and classify objects, model spatial structure, and turn the result into a narrated interpretation.",
+      "blog_title": "Scene Narrating System for Visual Understanding",
+      "blog_paragraphs": [
+        "Scene Narrating System appears to be a final-year computer vision project aimed at translating visual scenes into structured interpretations that can be narrated or explained. The executable is bundled with a full Emgu CV and OpenCV stack, which suggests a traditional image-processing pipeline rather than a black-box end-to-end model.",
+        "The available clues point to a sequence of operations: load or capture an image, convert it through grayscale and binary stages, segment contours, classify detected objects, and transform the ground layout into a graph-like representation. The included training data strongly suggests at least human and car categories, so this project is best described as an early scene-understanding and object-based narration system built with classic computer vision tools."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows desktop",
+          "camera capture"
+        ],
+        "libraries": [
+          "Emgu CV",
+          "OpenCV",
+          "Emgu.CV.OCR",
+          "OpenTK",
+          "ZedGraph"
+        ],
+        "concepts": [
+          "computer vision",
+          "scene understanding",
+          "object classification",
+          "contour detection",
+          "image segmentation",
+          "graph-based representation"
+        ]
+      },
+      "keywords": [
+        "scene narration",
+        "computer vision",
+        "C#",
+        "Emgu CV",
+        "OpenCV",
+        "object classification",
+        "image segmentation",
+        "contour detection",
+        "camera capture",
+        "graduation project"
+      ],
+      "thumbnail_prompt": "Generate a computer-vision thumbnail showing a real-world street or room image being transformed into overlays: detected humans and cars, contour boxes, graph nodes connecting scene elements, and a narration panel on the side. Make it look like a serious graduation project in visual AI."
+    },
+    {
+      "folder_name": "Security Project",
+      "slug": "security-project",
+      "display_name": "Security Project",
+      "project_type": "cryptography desktop suite",
+      "verification_level": "inferred_from_packaged_artifacts",
+      "confidence": "medium",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "Security.exe, Client.exe, Server.exe, and SecurityLib.dll",
+        "assembly strings including Cryptography, Encryptor, Decryptor, Monoalphabetic, Polyalphabetic, KeyExchange, MultiplicativeInverse, EncryptionRounds, and DecryptionRounds"
+      ],
+      "notes": "Only packaged binaries are present, but the names and form resources are detailed enough to identify the project as a teaching-oriented cryptography suite.",
+      "summary": "A Windows security toolkit that explores classical encryption methods and basic client-server cryptography workflows through interactive desktop tools.",
+      "blog_title": "Classical Cryptography Toolkit with Client-Server Demos",
+      "blog_paragraphs": [
+        "Security Project looks like a desktop suite built to explain cryptography by making it interactive. The executable names and symbols point to encryption and decryption workflows, classical cipher families, arithmetic helpers, and a small networked setup with client and server components.",
+        "The strongest website angle here is education. Terms such as monoalphabetic, polyalphabetic, key exchange, and multiplicative inverse suggest that the project was designed to help users see how classical cryptographic ideas work in practice instead of treating security as a purely theoretical topic. It reads like a student-friendly sandbox for experimenting with cipher mechanics and message exchange."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework"
+        ],
+        "libraries": [
+          "SecurityLib",
+          "System.Windows.Forms"
+        ],
+        "concepts": [
+          "cryptography",
+          "monoalphabetic cipher",
+          "polyalphabetic cipher",
+          "key exchange",
+          "client-server communication",
+          "modular arithmetic"
+        ]
+      },
+      "keywords": [
+        "security",
+        "cryptography",
+        "C#",
+        "Windows Forms",
+        "monoalphabetic cipher",
+        "polyalphabetic cipher",
+        "key exchange",
+        "client server",
+        "encryption",
+        "decryption"
+      ],
+      "thumbnail_prompt": "Create a cybersecurity teaching-project thumbnail with cipher wheels, lock icons, encrypted text streams, and two desktop panels labeled client and server exchanging keys. Use sharp blue and amber highlights and keep the feel academic rather than corporate."
+    },
+    {
+      "folder_name": "Student Course Management System Code",
+      "slug": "student-course-management-system-code",
+      "display_name": "Student Course Management System",
+      "project_type": "console management system",
+      "verification_level": "verified_from_source",
+      "confidence": "high",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "C++ source code for Student, Course, Department, General, and Interface modules",
+        "console forms and menu flow in interface.cpp and interface.h",
+        "file I/O, maps, sorting, and grade management logic"
+      ],
+      "notes": "Includes.h references Vector.h and Vector.cpp, but those files are not present in the folder. The main project logic is still clear from the existing source files.",
+      "summary": "A feature-rich C++ console system for managing students, departments, courses, prerequisites, grades, and ranking reports.",
+      "blog_title": "Student Course Management System in C++",
+      "blog_paragraphs": [
+        "This project is a full academic management system implemented as a C++ console application. It models students, departments, and courses as separate entities, then ties them together through enrollment, prerequisites, grades, and department-level reporting. The interface code suggests a large menu-driven experience that supports add, search, update, display, and delete flows.",
+        "What stands out is the breadth of the operations. The system can assign courses to students, calculate total marks, report grades in detail, display course prerequisites, and sort students by performance across courses and departments. It is more than a CRUD exercise; it is a small information system that tries to reflect how academic data behaves across multiple related structures."
+      ],
+      "stack": {
+        "languages": [
+          "C++"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows console",
+          "file-based persistence"
+        ],
+        "libraries": [
+          "STL",
+          "Windows.h",
+          "fstream"
+        ],
+        "concepts": [
+          "student information system",
+          "course prerequisites",
+          "grade management",
+          "sorting and reporting",
+          "menu-driven interface",
+          "data modeling"
+        ]
+      },
+      "keywords": [
+        "student management",
+        "course management",
+        "C++",
+        "console application",
+        "STL",
+        "grades",
+        "prerequisites",
+        "departments",
+        "file I/O",
+        "academic system"
+      ],
+      "thumbnail_prompt": "Design a structured software-project thumbnail for a student course management system: dashboard-like cards for students, departments, and courses, grade tables, prerequisite arrows, and a clean console-to-system visual style. Use academic colors and make the project feel organized and data driven."
+    },
+    {
+      "folder_name": "Survival Darius",
+      "slug": "survival-darius",
+      "display_name": "Survival Darius",
+      "project_type": "Unity survival action game",
+      "verification_level": "verified_from_source",
+      "confidence": "high",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "Unity project files and builds",
+        "ProjectVersion.txt showing Unity 2018.2.4f1",
+        "custom scripts for Darius movement, attacks, spells, cooldown timers, enemies, scoring, and inventory",
+        "Unity post-processing and NavMesh references"
+      ],
+      "notes": "The project combines original Darius-themed mechanics with remnants of Unity's Survival Shooter tutorial structure, which makes the customization work easy to identify.",
+      "summary": "A Unity survival game that reworks the classic Survival Shooter format into a Darius-themed arena combat experience with melee combos, spells, cooldowns, and enemy waves.",
+      "blog_title": "Survival Darius: Unity Survival Combat Rework",
+      "blog_paragraphs": [
+        "Survival Darius is the most game-engine heavy project in the workspace. Built in Unity 2018, it adapts the familiar survival-arena loop into a character-driven combat game centered on Darius-style attacks and abilities. The player can move through the arena, chain melee attacks, trigger spells on number keys, manage cooldowns, and survive against spawning enemies while the score system tracks progress.",
+        "The source shows clear customization on top of the base survival structure: spell-specific particle systems, cooldown UI, pull and explosion effects, custom animation triggers, inventory slots, and a themed asset library for characters, effects, and icons. This makes the project a good showcase of taking a tutorial foundation and turning it into something with a distinct identity and gameplay flavor."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Unity 2018.2.4f1",
+          "Visual Studio",
+          "Unity Editor"
+        ],
+        "libraries": [
+          "UnityEngine",
+          "UnityEngine.AIModule",
+          "Unity UI",
+          "Unity Post-Processing Stack",
+          "ScriptableObject"
+        ],
+        "concepts": [
+          "survival arena",
+          "melee combo system",
+          "spell cooldowns",
+          "enemy AI spawning",
+          "particle effects",
+          "HUD and score loop"
+        ]
+      },
+      "keywords": [
+        "Unity",
+        "C#",
+        "survival game",
+        "Darius",
+        "arena combat",
+        "cooldown UI",
+        "NavMesh",
+        "particle systems",
+        "post processing",
+        "enemy waves"
+      ],
+      "thumbnail_prompt": "Create a high-energy Unity game thumbnail for Survival Darius: a battle-worn hero at the center of a zombie-filled arena, swirling spell effects, cooldown icons, a score HUD, and dramatic cinematic lighting. Make it feel like a custom action-survival game with MOBA-inspired abilities."
+    },
+    {
+      "folder_name": "Theory Of Computation",
+      "slug": "theory-of-computation",
+      "display_name": "Theory Of Computation",
+      "project_type": "Turing machine simulator source project",
+      "verification_level": "verified_from_source",
+      "confidence": "high",
+      "relationship": "Source project for the packaged Turing Machine Simulator folder.",
+      "related_folders": [
+        "Turing Machine Simulator"
+      ],
+      "evidence": [
+        "C# WinForms source code",
+        "graph-based state editor with start and final states",
+        "single-tape Turing machine execution logic",
+        "step-by-step teaching mode with next and previous controls and tape visualization"
+      ],
+      "notes": "Despite the broad folder name, the implemented project is specifically a visual single-tape Turing machine builder and simulator.",
+      "summary": "A graphical Turing machine editor and simulator that lets users build states and transitions, enter tape input, and replay execution step by step.",
+      "blog_title": "Visual Turing Machine Builder for Theory of Computation",
+      "blog_paragraphs": [
+        "This project turns theory of computation into something visual and interactive. Instead of presenting Turing machines as static diagrams in lecture notes, the application lets the user draw states and transitions, mark start and final states, attach transition rules, enter tape input, and then simulate the machine directly inside a desktop interface.",
+        "The strongest part of the project is the teaching mode. Execution is broken into explicit steps, the active state changes color, the tape is updated as symbols are written, and the user can move forward and backward through the simulation. That makes the software valuable as both a study aid and a demonstration tool for explaining acceptance, rejection, and state transitions in a much more intuitive way."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework 4.0"
+        ],
+        "libraries": [
+          "System.Windows.Forms",
+          "System.Drawing"
+        ],
+        "concepts": [
+          "theory of computation",
+          "Turing machine",
+          "state diagram editor",
+          "tape simulation",
+          "accept and reject states",
+          "step replay"
+        ]
+      },
+      "keywords": [
+        "Turing machine",
+        "theory of computation",
+        "C#",
+        "WinForms",
+        "state diagram",
+        "tape simulation",
+        "automata",
+        "teaching mode",
+        "desktop app",
+        "algorithm education"
+      ],
+      "thumbnail_prompt": "Design a bold educational thumbnail for a Turing machine simulator: a state graph with labeled transitions on the left, a tape with a moving head on the right, and a highlighted accept state glowing green. Make it feel visual, technical, and immediately understandable."
+    },
+    {
+      "folder_name": "Turing Machine Simulator",
+      "slug": "turing-machine-simulator",
+      "display_name": "Turing Machine Simulator",
+      "project_type": "Turing machine simulator build",
+      "verification_level": "packaged_build_of_source_project",
+      "confidence": "high",
+      "relationship": "Packaged build variant of Theory Of Computation.",
+      "related_folders": [
+        "Theory Of Computation"
+      ],
+      "evidence": [
+        "TheoryOfComputation.exe",
+        "matching UI assets and filenames with Theory Of Computation",
+        "same product naming in executable metadata"
+      ],
+      "notes": "This folder is the standalone runnable build of the Turing machine simulator whose source lives in Theory Of Computation.",
+      "summary": "A distributable Windows build of the visual Turing machine simulator, focused on interactive state editing and tape-based execution replay.",
+      "blog_title": "Turing Machine Simulator Build",
+      "blog_paragraphs": [
+        "This folder packages the finished Windows version of the Turing machine simulator. It preserves the interface assets, the executable, and the polished UI layer needed to explore machine design and tape execution without opening the source project.",
+        "For a website portfolio, this build version is useful because it highlights the final user-facing experience. The project is not just about implementing theory; it is about turning theoretical state machines into something a learner can draw, run, and inspect visually step by step."
+      ],
+      "stack": {
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows Forms",
+          ".NET Framework 4.0"
+        ],
+        "libraries": [
+          "System.Windows.Forms",
+          "System.Drawing"
+        ],
+        "concepts": [
+          "Turing machine",
+          "tape visualization",
+          "state transitions",
+          "accept and reject logic",
+          "educational desktop app"
+        ]
+      },
+      "keywords": [
+        "Turing machine simulator",
+        "theory of computation",
+        "C#",
+        "WinForms",
+        "desktop build",
+        "state transitions",
+        "tape",
+        "automata",
+        "education",
+        "simulation"
+      ],
+      "thumbnail_prompt": "Create a polished software thumbnail for a Turing machine simulator build: a desktop app window showing a tape, a highlighted current state, arrows between states, and a big Accepted or Rejected indicator. Keep the composition clear and academic."
+    },
+    {
+      "folder_name": "XOCode",
+      "slug": "xocode",
+      "display_name": "XOCode",
+      "project_type": "console game",
+      "verification_level": "verified_from_source",
+      "confidence": "high",
+      "relationship": null,
+      "related_folders": [],
+      "evidence": [
+        "C++ source code for game loop, board drawing, player naming, turns, and win checking",
+        "ASCII-art console rendering",
+        "Windows console color handling"
+      ],
+      "notes": "This is a simple but complete two-player console game and is one of the clearest beginner-friendly projects in the workspace.",
+      "summary": "A C++ console implementation of tic-tac-toe with colored ASCII rendering, player names, and a full turn-based loop.",
+      "blog_title": "XOCode: Console Tic-Tac-Toe",
+      "blog_paragraphs": [
+        "XOCode is a compact console game that implements the full tic-tac-toe loop in C++. It asks for player names, prints a position guide, draws a stylized ASCII board, alternates turns between X and O, and checks for all horizontal, vertical, and diagonal win conditions.",
+        "What gives the project charm is its presentation. Instead of treating the console as plain text, it uses Windows console colors and block characters to create a more playful interface. That makes it a good early game-programming project: small enough to understand quickly, but complete enough to show real control flow, state tracking, and user interaction."
+      ],
+      "stack": {
+        "languages": [
+          "C++"
+        ],
+        "tools": [
+          "Visual Studio",
+          "Windows console"
+        ],
+        "libraries": [
+          "iostream",
+          "string",
+          "Windows.h"
+        ],
+        "concepts": [
+          "tic-tac-toe",
+          "turn-based game loop",
+          "ASCII UI",
+          "win detection",
+          "console interaction"
+        ]
+      },
+      "keywords": [
+        "tic tac toe",
+        "XO",
+        "C++",
+        "console game",
+        "ASCII art",
+        "Windows console",
+        "two player",
+        "game loop",
+        "win checking",
+        "beginner game project"
+      ],
+      "thumbnail_prompt": "Create a retro coding-game thumbnail for a console tic-tac-toe project: a glowing terminal grid with X and O marks, green and amber text, blocky ASCII styling, and a subtle C++ code backdrop. Make it nostalgic and immediately readable."
+    }
+  ]
+}

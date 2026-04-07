@@ -12,6 +12,7 @@ Maintain this repository as the canonical Astro portfolio site for **Islam Osman
   - Home
   - About
   - Projects listing
+  - School projects archive
   - Individual project pages
   - Publications
   - Experience
@@ -61,6 +62,7 @@ Use **HugoBlox Academic CV** as a structural influence only:
 ### Phase 3 - Pages and structure
 - [x] Keep existing pages for home, about, projects, project detail, publications, experience, and contact
 - [x] Add dedicated `education` and `cv` pages
+- [x] Add a dedicated `school-projects` archive page sourced from vetted JSON summaries
 - [x] Update navigation, footer, and cross-links to include the new routes
 - [x] Ensure every internal link remains base-aware
 

@@ -3,13 +3,14 @@ title: "Video Retrieval App"
 slug: "video-retrieval-app"
 year: 2025
 period: "2025"
+organization: "Matt3r.AI"
 subtitle: "Multimodal search over driving-video archives using text, tags, and reference clips."
 summary: "A semantic retrieval interface that helps engineers find relevant driving footage quickly using text, metadata, and reference-video workflows."
 featured: true
 tags: ["Retrieval", "Multimodal Search", "Autonomous Driving", "Archive Search"]
 stack: ["Sentence Transformers", "LLM", "Postgres", "AWS S3"]
 impact: "Made large video collections easier to explore by combining embedding similarity, structured metadata, and a practical desktop workflow."
-cover: "/images/projects/video-retrieval-app.jpg?v=20260406-video"
+cover: "/images/projects/video-retrieval-app.jpg?v=20260407-video-b"
 order: 2
 ---
 

@@ -3,6 +3,7 @@ title: "CT Scanner Quality Control"
 slug: "ct-scanner-quality-control"
 year: 2023
 period: "2023"
+organization: "InteriorHealth"
 subtitle: "Self-supervised vision transformers for scanner calibration quality assessment."
 summary: "A medical-imaging QC system that uses self-supervised pretraining and vision transformers to improve generalization in scanner calibration assessment."
 featured: true

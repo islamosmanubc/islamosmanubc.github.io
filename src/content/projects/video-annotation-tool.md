@@ -3,6 +3,7 @@ title: "Video Annotation Tool"
 slug: "video-annotation-tool"
 year: 2024
 period: "2024"
+organization: "Matt3r.AI"
 subtitle: "A lightweight desktop interface for interval-based scenario labeling."
 summary: "An annotation interface for turning driving videos into structured event intervals with a faster, safer workflow."
 featured: true

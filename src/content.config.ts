@@ -9,6 +9,7 @@ const projects = defineCollection({
     slug: z.string(),
     year: z.number(),
     period: z.string(),
+    organization: z.string(),
     subtitle: z.string(),
     summary: z.string(),
     featured: z.boolean().default(false),

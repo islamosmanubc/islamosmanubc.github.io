@@ -3,6 +3,7 @@ title: "Driving Scenario Detection Pipeline"
 slug: "driving-scenario-detection"
 year: 2024
 period: "2024"
+organization: "Matt3r.AI"
 subtitle: "An interpretable end-to-end pipeline for front-camera traffic-event detection."
 summary: "A scenario-detection system that fuses multiple perception signals with temporal reasoning to detect meaningful driving events."
 featured: true

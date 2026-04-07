@@ -3,6 +3,7 @@ title: "Confined Space Video Monitoring"
 slug: "confined-space-video-monitoring"
 year: 2021
 period: "2021"
+organization: "Irwin's Industrial Safety"
 subtitle: "AI-assisted monitoring, worker counting, and entry/exit logging for industrial confined spaces."
 summary: "A smart multi-camera safety system for confined-space operations that prioritizes active feeds, counts workers, tracks entry and exit, and integrates with industrial analytics workflows."
 featured: false

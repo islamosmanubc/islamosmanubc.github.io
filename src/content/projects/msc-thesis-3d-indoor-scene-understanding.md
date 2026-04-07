@@ -3,6 +3,7 @@ title: "MSc Thesis: 3D Indoor Scene Understanding in Image Sequence"
 slug: "msc-thesis-3d-indoor-scene-understanding"
 year: 2018
 period: "2015-2018"
+organization: "ASU"
 subtitle: "RGB-D scene understanding through detection, tracking, and segmentation."
 summary: "Graduate research on structured indoor-scene interpretation using RGB-D sequences and combined classical and deep computer-vision methods."
 featured: false

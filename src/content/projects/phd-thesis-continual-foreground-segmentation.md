@@ -3,6 +3,7 @@ title: "PhD Thesis: Continual Foreground Segmentation with Limited Data"
 slug: "phd-thesis-continual-foreground-segmentation"
 year: 2023
 period: "2019-2023"
+organization: "UBC"
 subtitle: "Continual and data-efficient vision research for robust foreground segmentation."
 summary: "A long-term research program on foreground segmentation under limited-data settings, emphasizing continual adaptation and generalization."
 featured: true

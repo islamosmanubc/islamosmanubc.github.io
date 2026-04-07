@@ -3,6 +3,7 @@ title: "Road Occupancy-Grid Generation Toolkit"
 slug: "occupancy-grid-toolkit"
 year: 2026
 period: "2026-Present"
+organization: "Matt3r.AI"
 subtitle: "Production tooling for generating and editing structured bird's-eye road-scene representations."
 summary: "A GUI-driven toolkit for generating, inspecting, and editing road occupancy-grid outputs from driving perception results and telemetry."
 featured: true
