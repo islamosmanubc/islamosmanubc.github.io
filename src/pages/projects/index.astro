@@ -4,7 +4,9 @@ import ProjectGrid from "../../components/ProjectGrid.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.year - a.data.year || a.data.order - b.data.order
+);
 ---
 
 <Layout

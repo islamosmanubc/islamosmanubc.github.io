@@ -17,8 +17,11 @@ import {
   profile
 } from "../data/site";
 
+const sortProjects = (a: Awaited<ReturnType<typeof getCollection<"projects">>>[number], b: Awaited<ReturnType<typeof getCollection<"projects">>>[number]) =>
+  b.data.year - a.data.year || a.data.order - b.data.order;
+
 const projects = (await getCollection("projects"))
-  .sort((a, b) => a.data.order - b.data.order)
+  .sort(sortProjects)
   .filter((project) => project.data.featured)
   .slice(0, 6);
 
