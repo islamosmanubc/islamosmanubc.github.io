@@ -79,6 +79,7 @@ Use **HugoBlox Academic CV** as a structural influence only:
 
 ## Optional follow-up refinements
 
+- Add new project case studies and supporting figures as additional industry or research work is prepared for the public portfolio.
 - Replace the current SVG project artwork with real screenshots, figures, or short demo media.
 - Add richer Open Graph artwork if the site will be widely shared on social platforms.
 - Refine project narratives further as public-facing case studies if more detail becomes available.
