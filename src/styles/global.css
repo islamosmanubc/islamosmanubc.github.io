@@ -127,6 +127,7 @@ summary:focus-visible {
   color: #cbd5e1;
 }
 
+.prose-themed h1,
 .prose-themed h2,
 .prose-themed h3,
 .prose-themed h4 {
@@ -154,6 +155,27 @@ summary:focus-visible {
 
 .prose-themed a {
   color: #a5f3fc;
+}
+
+.prose-themed figure {
+  margin: 1.5rem 0 2rem;
+}
+
+.prose-themed img {
+  display: block;
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(8, 13, 24, 0.7);
+  box-shadow: 0 20px 50px rgba(2, 6, 23, 0.36);
+}
+
+.prose-themed figcaption {
+  margin-top: 0.75rem;
+  color: #93a4bf;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  text-align: center;
 }
 
 .soft-divider {
